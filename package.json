@@ -1,0 +1,23 @@
+{
+  "name": "gulp-html-include",
+  "version": "0.0.1",
+  "description": "gulp-html-include",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "html",
+    "include"
+  ],
+  "author": "zjh <81681445@qq.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "assert": "^1.4.1",
+    "event-stream": "^3.3.4",
+    "gulp": "^3.9.1",
+    "gulp-util": "^3.0.8",
+    "through2": "^2.0.3",
+    "vinyl": "^2.1.0"
+  }
+}
