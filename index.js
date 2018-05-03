@@ -14,11 +14,6 @@ function findFile (path) {
 }
 function htmlInclude(htmlText) {
   let reg = /(<include[^<>]*>)/gi;
-   if (!htmlText) {
-       throw err('Missing html text!')
-   }
-
-   htmlTextBuffer = new Buffer(htmlText);
 
    /////
    let stream = through.obj(function(file, enc, cb) {
