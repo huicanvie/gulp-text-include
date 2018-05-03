@@ -1,7 +1,7 @@
 'use strict';
 let through = require('through2');
 let gutil = require('gulp-util');
-let myFile = require('./file');
+let myFile = require('./lib/file');
 let PluginError = gutil.PluginError;
 
 const PLUGIN_NAME = 'gulp-html-include'
@@ -12,9 +12,9 @@ function err (text) {
 function findFile (path) {
     
 }
-function htmlInclude(htmlText) {
+function htmlInclude() {
   let reg = /(<include[^<>]*>)/gi;
-
+   
    /////
    let stream = through.obj(function(file, enc, cb) {
        if (file.isStream()) {
@@ -23,13 +23,14 @@ function htmlInclude(htmlText) {
        }
 
        if (file.isBuffer()) {
-           file.contents = htmlTextBuffer
+        //    file.contents = htmlTextBuffer
        }
+       let base = file.base
        let contents = file.contents.toString('utf8')
        let replaceTagArr = contents.match(reg)  ///["<include src="tt.html">"]
        let pathArr = []
 
-       console.log(contents)
+       //console.log(contents)
        replaceTagArr.forEach(tag => {
            if (/src="(.*)"/gi.test(tag)){
                pathArr.push(RegExp.$1);
@@ -38,7 +39,7 @@ function htmlInclude(htmlText) {
        console.log(pathArr)
 
        ////find out the file
-       let newHtmlText = myFile(contents,pathArr)
+       let newHtmlText = myFile(contents,base,pathArr)
 
        file.contents = new Buffer(newHtmlText)
       
@@ -46,8 +47,7 @@ function htmlInclude(htmlText) {
 
        cb();
    })
-   ///return steam
-   return steam;
+   return stream;
 }
 
 module.exports = htmlInclude
