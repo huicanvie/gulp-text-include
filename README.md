@@ -8,6 +8,7 @@
   gulpfile.js
 
 ```
+```
 gulpfile.js
 
 var gulpHtmlImport = require('gulp-html-include')
@@ -17,10 +18,10 @@ gulp.task('include',function(){
     .pipe(include())
     .pipe(gulp.dest('dist'));
 });
-
+```
 ```
 index.html
 
 <include src="components/components1.html">
 <include src="components/components1.html"></include>
-~~~
+```
