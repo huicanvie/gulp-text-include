@@ -11,7 +11,7 @@
 ```
 gulpfile.js
 
-var gulpHtmlImport = require('gulp-html-include')
+var gulpHtmlImport = require('gulp-text-include')
 
 gulp.task('include',function(){
     return gulp.src('index.html')

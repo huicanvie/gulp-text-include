@@ -4,7 +4,7 @@ let gutil = require('gulp-util');
 let myFile = require('./lib/file');
 let PluginError = gutil.PluginError;
 
-const PLUGIN_NAME = 'gulp-html-include'
+const PLUGIN_NAME = 'gulp-text-include'
 
 function err (text) {
     return new PluginError(PLUGIN_NAME,text)
