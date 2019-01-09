@@ -1,4 +1,4 @@
-## this is a component that can import into any html file
+## This is a component that can import into any html file
 ###
 ```
 --/dist
