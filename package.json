@@ -1,6 +1,6 @@
 {
   "name": "gulp-text-include",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "gulp-text-include",
   "main": "index.js",
   "scripts": {
